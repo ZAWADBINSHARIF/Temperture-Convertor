@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val textEdit = formText.text.toString()
         if (textEdit.isNotEmpty()) {
             formText.text = textEdit.substring(0, textEdit.length - 1)
-            val pattern = Regex(".")
+
             lastNumberic = true
             isDot = false
         }
