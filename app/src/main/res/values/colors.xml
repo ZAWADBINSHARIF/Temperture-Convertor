@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3700B3</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="numberBtn">#0097A7</color>
+    <color name="equalBtn">#3700B3</color>
+    <color name="crossBtn">#C10000</color>
+    <color name="clearBtn">#FBC02D</color>
+    <color name="dotBtn">#006064</color>
+
+    <color name="textColor">#9C27B0</color>
+</resources>
