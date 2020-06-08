@@ -47,13 +47,13 @@ class MainActivity : AppCompatActivity() {
                 lastNumberic = true
                 isDot = false
 
-                if (lastNumberic && !isDot) {
-                    if (!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
-                        formText.append("0")
+                when {
+                    (lastNumberic && !isDot) -> {
+                        when {!textEdit.isNotEmpty() -> formText.append("0")}   // when FormText is Empty if click "." then FormText will show "0."
+                        formText.append(btnDot.text)
+                        lastNumberic = false
+                        isDot = true
                     }
-                    formText.append(btnDot.text)
-                    lastNumberic = false
-                    isDot = true
                 }
             }
             else -> {
