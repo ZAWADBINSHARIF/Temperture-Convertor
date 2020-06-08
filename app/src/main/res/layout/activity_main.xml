@@ -49,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:gravity="right"
                 android:maxLength="18"
-                android:textColor="#303F9F"
+                android:textColor="@color/editText"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="right"
-                android:textColor="#303F9F"
+                android:textColor="@color/editText"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -119,8 +119,8 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="7"
-                android:textSize="25sp" />
+                android:text="@string/Seven"
+                android:textSize="25sp"/>
 
             <Button
                 android:id="@+id/btnEight"
@@ -129,7 +129,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="8"
+                android:text="@string/Eight"
                 android:textSize="25sp" />
 
             <Button
@@ -139,7 +139,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="9"
+                android:text="@string/Nine"
                 android:textSize="25sp" />
 
             <Button
@@ -149,7 +149,7 @@
                 android:layout_weight="1.5"
                 android:background="#7B1FA2"
                 android:onClick="onCross"
-                android:text="X"
+                android:text="@string/Cross"
                 android:textSize="45sp" />
 
 
@@ -169,7 +169,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="4"
+                android:text="@string/Four"
                 android:textSize="25sp" />
 
             <Button
@@ -179,7 +179,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="5"
+                android:text="@string/Five"
                 android:textSize="25sp" />
 
             <Button
@@ -189,7 +189,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="6"
+                android:text="@string/Six"
                 android:textSize="25sp" />
 
             <Button
@@ -199,7 +199,7 @@
                 android:layout_weight="1.5"
                 android:background="#FBC02D"
                 android:onClick="onClear"
-                android:text="CR"
+                android:text="@string/Clear"
                 android:textSize="45sp" />
 
 
@@ -220,7 +220,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="1"
+                android:text="@string/One"
                 android:textSize="25sp" />
 
             <Button
@@ -230,7 +230,7 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="2"
+                android:text="@string/Two"
                 android:textSize="25dp" />
 
             <Button
@@ -240,8 +240,8 @@
                 android:layout_weight="1"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="3"
-                android:textSize="25dp" />
+                android:text="@string/Three"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/btnDot"
@@ -251,7 +251,7 @@
                 android:background="@color/dotBtn"
                 android:gravity="center"
                 android:onClick="onDot"
-                android:text="."
+                android:text="@string/Dot"
                 android:textSize="50sp" />
 
 
@@ -271,7 +271,7 @@
                 android:layout_weight="3"
                 android:background="@color/numberBtn"
                 android:onClick="onDigit"
-                android:text="0"
+                android:text="@string/Zero"
                 android:textSize="25sp" />
 
             <Button
@@ -280,7 +280,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
                 android:background="@color/equalBtn"
-                android:text="="
+                android:text="@string/Equal"
                 android:textSize="48sp" />
 
         </LinearLayout>

@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 isDot = false
 
                 if (lastNumberic && !isDot) {
-                    if(!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
+                    if (!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
                         formText.append("0")
                     }
                     formText.append(btnDot.text)

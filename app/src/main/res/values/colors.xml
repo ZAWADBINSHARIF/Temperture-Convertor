@@ -11,4 +11,6 @@
     <color name="dotBtn">#006064</color>
 
     <color name="textColor">#9C27B0</color>
+
+    <color name="editText">#303F9F</color>
 </resources>
