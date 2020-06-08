@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         /*
         * this condition for "."
         * */
-        val dot = textEdit.any { it == '.' }  /* if FormText has any '.' */
+        val dot = textEdit.any { it == '.' }  /* FormText has any '.' ->  true or false*/
 
         when {  // when FormText has no '.'
             !dot -> {
