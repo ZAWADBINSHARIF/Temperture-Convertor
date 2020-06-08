@@ -32,17 +32,32 @@ class MainActivity : AppCompatActivity() {
         val textEdit = formText.text.toString()
         if (textEdit.isNotEmpty()) {
             formText.text = textEdit.substring(0, textEdit.length - 1)
-
-            lastNumberic = true
-            isDot = false
         }
     }
 
     fun onDot(view: View) {
-        if (lastNumberic && !isDot) {
-            formText.append(btnDot.text)
+        val textEdit = formText.text.toString()
+        /*
+        * this condition for "."
+        * */
+        val dot = textEdit.any { it == '.' }
+        /* if FormText has any '.' */
+        if (!dot) {
+            lastNumberic = true
+            isDot = false
+
+            if (lastNumberic && !isDot) {
+                if(!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
+                    formText.append("0")
+                }
+                formText.append(btnDot.text)
+                lastNumberic = false
+                isDot = true
+            }
+        }else {
             lastNumberic = false
             isDot = true
         }
+
     }
 }
