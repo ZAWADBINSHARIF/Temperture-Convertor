@@ -40,23 +40,26 @@ class MainActivity : AppCompatActivity() {
         /*
         * this condition for "."
         * */
-        val dot = textEdit.any { it == '.' }
-        /* if FormText has any '.' */
-        if (!dot) {
-            lastNumberic = true
-            isDot = false
+        val dot = textEdit.any { it == '.' }  /* if FormText has any '.' */
 
-            if (lastNumberic && !isDot) {
-                if(!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
-                    formText.append("0")
+        when {  // when FormText has no '.'
+            !dot -> {
+                lastNumberic = true
+                isDot = false
+
+                if (lastNumberic && !isDot) {
+                    if(!textEdit.isNotEmpty()) {  // when FormText is Empty if click "." then FormText will show "0."
+                        formText.append("0")
+                    }
+                    formText.append(btnDot.text)
+                    lastNumberic = false
+                    isDot = true
                 }
-                formText.append(btnDot.text)
+            }
+            else -> {
                 lastNumberic = false
                 isDot = true
             }
-        }else {
-            lastNumberic = false
-            isDot = true
         }
 
     }
