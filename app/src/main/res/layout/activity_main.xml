@@ -280,6 +280,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
                 android:background="@color/equalBtn"
+                android:onClick="onEqual"
                 android:text="@string/Equal"
                 android:textSize="48sp" />
 

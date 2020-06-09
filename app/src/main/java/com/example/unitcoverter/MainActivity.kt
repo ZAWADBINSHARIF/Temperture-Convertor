@@ -2,29 +2,46 @@ package com.example.unitcoverter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var lastNumberic: Boolean = false
-    var isDot: Boolean = false
+    private var lastNumber: Boolean = false
+    private var isDot: Boolean = false
+
+    private lateinit var spinner1: Spinner
+    private lateinit var spinner2: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        spinner1 = findViewById<Spinner>(R.id.formSpinner)
+        spinner2 = findViewById<Spinner>(R.id.toSpinner)
+
+        val operation = arrayOf(UnitVaL.C, UnitVaL.F)
+        val operationAdapter =
+            ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, operation)
+
+        spinner1.adapter = operationAdapter
+        spinner2.adapter = operationAdapter
     }
 
     fun onDigit(view: View) {
         formText.append((view as Button).text)
 
-        lastNumberic = true
+        lastNumber = true
     }
 
     fun onClear(view: View) {
         formText.text = ""
-        lastNumberic = false
+        toText.text = ""
+        lastNumber = false
         isDot = false
     }
 
@@ -40,27 +57,33 @@ class MainActivity : AppCompatActivity() {
         /*
         * this condition for "."
         * */
-        val dot = textEdit.any { it == '.' }  /* FormText has any '.' ->  true or false*/
+        val hasDot = textEdit.any { it == '.' }  /* FormText has any '.' ->  true or false*/
 
         when {  // when FormText has no '.'
-            !dot -> {
-                lastNumberic = true
+            !hasDot -> {
+                lastNumber = true
                 isDot = false
 
                 when {
-                    (lastNumberic && !isDot) -> {
-                        when {!textEdit.isNotEmpty() -> formText.append("0")}   // when FormText is Empty if click "." then FormText will show "0."
+                    (lastNumber && !isDot) -> {
+                        when {
+                            !textEdit.isNotEmpty() -> formText.append("0")
+                        }   // when FormText is Empty if click "." then FormText will show "0."
                         formText.append(btnDot.text)
-                        lastNumberic = false
+                        lastNumber = false
                         isDot = true
                     }
                 }
             }
             else -> {
-                lastNumberic = false
+                lastNumber = false
                 isDot = true
             }
         }
 
+    }
+
+    fun onEqual(view: View) {
+        Logic(spinner1, spinner2, formText, toText)
     }
 }

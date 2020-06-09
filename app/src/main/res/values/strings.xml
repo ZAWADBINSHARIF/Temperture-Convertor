@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Unit Coverter</string>
+    <string name="app_name">Temperature Unit</string>
 
     <string name="Zero">0</string>
     <string name="One">1</string>
