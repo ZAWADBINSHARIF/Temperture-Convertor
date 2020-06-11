@@ -84,6 +84,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onEqual(view: View) {
-        Logic(spinner1, spinner2, formText, toText)
+        when {
+            formText.text.isNotEmpty() -> {
+                Logic(spinner1, spinner2, formText, toText)
+            }
+        }
     }
 }
